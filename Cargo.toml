@@ -11,7 +11,7 @@ categories = ["api-bindings", "games"]
 
 [badges]
 codecov = { repository = "zarthus/opentdb-rs", branch = "master", service = "github" }
-travis-ci = { repository = "zarthus/opentdb-rs", branch = "master" }
+travis-ci = { repository = "Zarthus/opentdb-rs", branch = "master" }
 maintenance = { status = "passively-maintained" }
 is-it-maintained-open-issues = { repository = "zarthus/opentdb-rs" }
 is-it-maintained-issue-resolution = { repository = "zarthus/opentdb-rs" }
