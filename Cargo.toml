@@ -2,7 +2,7 @@
 name = "opentdb"
 description = "An implementation of the Open Trivia Database API in Rust https://opentdb.com.\n"
 repository = "https://github.com/zarthus/opentdb-rs"
-version = "0.2.0"
+version = "0.1.1"
 authors = ["Jos Ahrens <contact@liefland.net>"]
 edition = "2018"
 license-file = "LICENSE"
