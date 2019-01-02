@@ -1,8 +1,13 @@
 #[derive(Deserialize, Debug)]
+/// Which difficulty we want the Questions to be in.
 pub enum Difficulty {
+    /// Do not filter by difficulty
     Any,
+    /// Filter questions by "easy" difficulty
     Easy,
+    /// Filter questions by "medium" difficulty
     Medium,
+    /// Filter questions by "hard" difficulty
     Hard,
 }
 

@@ -4,6 +4,8 @@ use crate::enums::question_type::QuestionType;
 use crate::enums::difficulty::Difficulty;
 use crate::enums::response_code::ResponseCode;
 
+/// A struct representing the response from the server for the main API.
+///
 /// Example Response
 /// ```json
 /// {
@@ -22,6 +24,8 @@ pub struct ApiResponse {
     pub results: Vec<ApiResult>
 }
 
+/// A struct representing a collection of Results of a `ApiResponse`.
+///
 /// Example Result:
 /// ```json
 /// {
@@ -49,6 +53,8 @@ pub struct ApiResult {
     pub incorrect_answers: Vec<String>
 }
 
+/// A struct representing the response of a new Session being created.
+///
 /// Example Result:
 /// ```json
 /// {
@@ -64,6 +70,8 @@ pub struct ApiSessionNew {
     pub token: String
 }
 
+/// A struct representing the response of a Session being reset.
+///
 /// Example Result:
 /// ```json
 /// {

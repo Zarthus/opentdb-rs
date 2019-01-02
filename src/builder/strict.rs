@@ -4,6 +4,10 @@ use crate::enums::question_type::QuestionType;
 use crate::enums::encoding::Encoding;
 use crate::api_request::ApiRequest;
 
+/// The Strict Builder is limited to what is within Enums, so the builder only deals
+/// with data that is KNOWN to the library. If the user uses something unsupported, the builder
+/// will not accept it. Should, at some point, something unsupported be needed, the
+/// ApiBuilderSimple will permit this
 #[allow(dead_code)]
 #[derive(Default)]
 pub struct ApiBuilderStrict {

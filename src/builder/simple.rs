@@ -4,6 +4,9 @@ use crate::enums::question_type::QuestionType;
 use crate::enums::encoding::Encoding;
 use crate::api_request::ApiRequest;
 
+/// The Simple Builder is not limited to what is within Enums, so the builder SHOULD be able
+/// to deal with any arbitrary data. If the user uses something unsupported, breakage MIGHT occur,
+/// but at the same time should something unsupported and new or shiny happen, the user can use it.
 #[allow(dead_code)]
 #[derive(Default)]
 pub struct ApiBuilderSimple {

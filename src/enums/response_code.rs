@@ -1,3 +1,5 @@
+/// The API will always return a "Response Code",
+/// this value can be used to determine whether or not your request was a success.
 #[derive(Deserialize, Debug)]
 pub enum ResponseCode {
     /// Code 0: Returned results successfully.

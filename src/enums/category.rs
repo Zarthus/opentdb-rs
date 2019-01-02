@@ -1,10 +1,19 @@
+/// This is a local mapping of the response from the API request at
+/// https://opentdb.com/api_category.php.
+///
+/// By specifying a value here that is not "Any", you will filter questions
+/// by that category.
+///
+/// Author note:
+///
 /// Static data retrieved from https://opentdb.com/api_category.php
 /// We will have to manually update this whenever it changes.
 ///
-/// Future solutions might include a dynamic category, although the
-/// builder completely allows for custom integers.
+/// TODO: Future solutions might include a dynamic category, although the
+/// TODO: builder completely allows for custom integers.
 #[derive(Copy, Clone, Deserialize, Debug)]
 pub enum Category {
+    /// Do not filter for any category.
     Any = 0,
 
     GeneralKnowledge = 9,

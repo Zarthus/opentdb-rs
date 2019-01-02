@@ -46,6 +46,8 @@ pub fn send_and_parse(request: ApiRequest) -> Result<ApiResponse, reqwest::Error
     Ok(response)
 }
 
+/// Converts an ApiRequest to a GET url for requests to `api.php`.
+///
 /// Example full URL: https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple&encode=base64
 fn to_url(request: ApiRequest) -> String {
     let mut url = String::from("https://opentdb.com/api.php");
@@ -104,7 +106,7 @@ pub fn session_new() -> Result<ApiSessionNew, reqwest::Error> {
 ///
 /// Calls: https://opentdb.com/api_token.php?command=reset&token=YOURTOKENHERE
 ///
-/// footnote: The API returns a blank page when querying an empty API key.
+/// footnote: The API returns a blank page when querying an empty or wrong API key.
 pub fn session_reset(token: &str) -> Result<ApiSessionReset, reqwest::Error> {
     let mut url: String = String::from("https://opentdb.com/api_token.php?command=reset&token=");
     url.push_str(token);

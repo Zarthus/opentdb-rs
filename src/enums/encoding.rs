@@ -1,3 +1,7 @@
+/// The encoding changes what the API returns. For security you should not rely on this value
+/// as this is a third party feature, at any point might such an API send back arbitrary text
+/// and you should always properly escape it.
+///
 /// Example Sentence (Non Encoded): "Don't forget that π = 3.14 & doesn't equal 3."
 pub enum Encoding {
     /// Default Encoding (HTML Codes) - example output:
