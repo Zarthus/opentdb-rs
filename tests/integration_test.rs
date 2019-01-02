@@ -17,7 +17,7 @@ use opentdb::enums::encoding::Encoding;
 ///
 /// TODO: Mock Requests from the server.
 #[test]
-fn integration_end_to_end() {
+fn integration_end_to_end_test() {
     let token: String = opentdb::session_new()
         .expect("Session Creation failed")
         .token;
