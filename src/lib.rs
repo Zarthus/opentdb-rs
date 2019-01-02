@@ -31,6 +31,10 @@ pub fn strict_builder() -> ApiBuilderStrict {
 }
 
 /// Send a blocking Request and return the reqwest Response
+///
+/// All data provided by their API is available under the
+/// [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
+/// as is written [on the Open Trivia Database website](https://opentdb.com/api_config.php).
 pub fn send(request: ApiRequest) -> Result<reqwest::Response, reqwest::Error> {
     reqwest::Client::new()
         .get(to_url(request).as_str())
@@ -38,6 +42,10 @@ pub fn send(request: ApiRequest) -> Result<reqwest::Response, reqwest::Error> {
 }
 
 /// Send a blocking Request and return a parsed Api Response.
+///
+/// All data provided by their API is available under the
+/// [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
+/// as is written [on the Open Trivia Database website](https://opentdb.com/api_config.php).
 pub fn send_and_parse(request: ApiRequest) -> Result<ApiResponse, reqwest::Error> {
     let response: ApiResponse = send(request)
         .expect("Failed to send Request")

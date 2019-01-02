@@ -80,3 +80,9 @@ Global Question Count Lookup: Returns the number of ALL questions in the databas
 OpenTDB itself is licensed under the [MIT license](LICENSE)
 
 OpenTDB depends on `serde` (for (de)serialization) and `reqwest` (for sending HTTP requests).
+
+The Open Trivia Database is a collection of user-contributed trivia questions. This project would not be
+possible without it.
+
+All data provided by their API is available under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
+as is written [on the Open Trivia Database website](https://opentdb.com/api_config.php).
