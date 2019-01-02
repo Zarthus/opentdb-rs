@@ -59,22 +59,6 @@ fn main() {
 - Only 1 Category can be requested per API Call. To get questions from any category, don't specify a category.
 - A Maximum of 50 Questions can be retrieved per call.
 
-### Missing
-
-The following API lookups are not implemented:
-
-Category Lookup: Returns the entire list of categories and ids in the database.
-
-- https://opentdb.com/api_category.php
-
-Category Question Count Lookup: Returns the number of questions in the database, in a specific category.
-
-- https://opentdb.com/api_count.php?category=CATEGORY_ID_HERE
-
-Global Question Count Lookup: Returns the number of ALL questions in the database. Total, Pending, Verified, and Rejected.
-
-- https://opentdb.com/api_count_global.php
-
 ### License and Acknowledgements
 
 OpenTDB itself is licensed under the [MIT license](LICENSE)

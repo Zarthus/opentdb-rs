@@ -1,6 +1,6 @@
 [package]
 name = "opentdb"
-description = "An implementation of the Open Trivia Database API in Rust <https://opentdb.com>"
+description = "An implementation of the Open Trivia Database API in Rust https://opentdb.com.\n"
 repository = "https://github.com/zarthus/opentdb-rs"
 version = "0.2.0"
 authors = ["Jos Ahrens <contact@liefland.net>"]
@@ -10,8 +10,11 @@ keywords = ["trivia", "otdb", "open-trivia"]
 categories = ["api-bindings", "games"]
 
 [badges]
+codecov = { repository = "zarthus/opentdb-rs", branch = "master", service = "github" }
 travis-ci = { repository = "zarthus/opentdb-rs", branch = "master" }
 maintenance = { status = "passively-maintained" }
+is-it-maintained-open-issues = { repository = "zarthus/opentdb-rs" }
+is-it-maintained-issue-resolution = { repository = "zarthus/opentdb-rs" }
 
 [dependencies]
 reqwest = "0.9.5"
