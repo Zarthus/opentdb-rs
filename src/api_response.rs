@@ -1,9 +1,5 @@
 /// An API response from `/api.php`.
 
-use crate::enums::question_type::QuestionType;
-use crate::enums::difficulty::Difficulty;
-use crate::enums::response_code::ResponseCode;
-
 /// A struct representing the response from the server for the main API.
 ///
 /// Example Response
