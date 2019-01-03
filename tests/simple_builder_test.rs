@@ -12,6 +12,7 @@ fn simple_builder_test() {
     let mut sb: ApiBuilderSimple = opentdb::simple_builder();
 
     let build = sb.questions(3)
+        .base_url(String::from("localhost"))
         .category(Category::Animals as u8)
         .difficulty(String::from(Difficulty::Any.value()))
         .question_type(String::from(QuestionType::Multiple.value()))

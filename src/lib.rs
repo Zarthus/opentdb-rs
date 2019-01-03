@@ -58,7 +58,7 @@ pub fn send_and_parse(request: ApiRequest) -> Result<ApiResponse, reqwest::Error
 ///
 /// Example full URL: https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple&encode=base64
 fn to_url(request: ApiRequest) -> String {
-    let mut url = String::from("https://opentdb.com/api.php");
+    let mut url: String = request.base_url + "/api.php";
 
     url.push_str("?amount=");
     url.push_str(&request.questions.to_string());
@@ -94,9 +94,9 @@ fn to_url(request: ApiRequest) -> String {
 /// Calls: https://opentdb.com/api_token.php?command=request
 ///
 /// The token will look like this: `955ccb0cfee1435e15c1d82cf5ed9528b1ed6fed28353043e8f91f4dcda3cff1`
-pub fn session_new() -> Result<ApiSessionNew, reqwest::Error> {
+pub fn session_new(base_url: Option<&str>) -> Result<ApiSessionNew, reqwest::Error> {
     let rq: ApiSessionNew = reqwest::Client::new()
-        .get("https://opentdb.com/api_token.php?command=request")
+        .get((base_url.unwrap_or("https://opentdb.com").to_string() + "/api_token.php?command=request").as_str())
         .send()
         .expect("Failed to send Request")
         .json()?;
@@ -115,8 +115,8 @@ pub fn session_new() -> Result<ApiSessionNew, reqwest::Error> {
 /// Calls: https://opentdb.com/api_token.php?command=reset&token=YOURTOKENHERE
 ///
 /// footnote: The API returns a blank page when querying an empty or wrong API key.
-pub fn session_reset(token: &str) -> Result<ApiSessionReset, reqwest::Error> {
-    let mut url: String = String::from("https://opentdb.com/api_token.php?command=reset&token=");
+pub fn session_reset(token: &str, base_url: Option<&str>) -> Result<ApiSessionReset, reqwest::Error> {
+    let mut url: String = base_url.unwrap_or("https://opentdb.com").to_string() + "/api_token.php?command=reset&token=";
     url.push_str(token);
 
     let rq: ApiSessionReset = reqwest::Client::new()

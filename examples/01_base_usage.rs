@@ -23,7 +23,7 @@ use opentdb::enums::encoding::Encoding;
 
 fn main() {
     // Start a new session so that the service remembers the questions we've received already.
-    let token: String = opentdb::session_new()
+    let token: String = opentdb::session_new(None)
         .expect("New Session Creation failed")
         .token;
 

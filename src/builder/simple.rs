@@ -10,6 +10,7 @@ use crate::api_request::ApiRequest;
 #[allow(dead_code)]
 #[derive(Default)]
 pub struct ApiBuilderSimple {
+    base_url: String,
     questions: u8,
     category: u8,
     difficulty: String,
@@ -21,6 +22,7 @@ pub struct ApiBuilderSimple {
 impl ApiBuilderSimple {
     pub fn new() -> Self {
         ApiBuilderSimple {
+            base_url: String::from("https://opentdb.com/"),
             questions: 10,
             category: Category::Any as u8,
             difficulty: Difficulty::Any.value().to_string(),
@@ -28,6 +30,11 @@ impl ApiBuilderSimple {
             encoding: Encoding::DefaultEncoding.value().to_string(),
             token: String::from(""),
         }
+    }
+
+    pub fn base_url(&mut self, base_url: String) -> &mut Self {
+        self.base_url = base_url;
+        self
     }
 
     pub fn questions(&mut self, questions: u8) -> &mut Self {
@@ -66,6 +73,7 @@ impl ApiBuilderSimple {
 
     pub fn build(&self) -> ApiRequest {
         ApiRequest {
+            base_url: self.base_url.to_string(),
             questions: self.questions,
             category: self.category,
             difficulty: self.difficulty.to_owned(),
