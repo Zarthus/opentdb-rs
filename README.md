@@ -28,7 +28,8 @@ For usage, review the [examples here](examples): [examples/01_base_usage.rs](exa
 
 opentdb-rs itself is licensed under the [MIT license](LICENSE), opentdb-rs is not affiliated with the website or API it is using.
 
-opentdb-rs depends on `serde` (for (de)serialization) and `reqwest` (for sending HTTP requests). It also uses a dev-dependency `mockito` for integration tests.
+opentdb-rs depends on `serde` (for (de)serialization) and `reqwest` (for sending HTTP requests), `percent-encoding` for encoding URLs conform to RFCs.
+It also uses a dev-dependency `mockito` for integration tests.
 
 The Open Trivia Database is a collection of user-contributed trivia questions. This project would not be
 possible without it.

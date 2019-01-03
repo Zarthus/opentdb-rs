@@ -2,8 +2,11 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 extern crate serde_json;
+extern crate percent_encoding;
 
 extern crate reqwest;
+
+use percent_encoding::{percent_encode, DEFAULT_ENCODE_SET};
 
 pub mod builder;
 pub mod api_request;
@@ -76,7 +79,7 @@ fn to_url(request: ApiRequest) -> String {
         url.push_str(&request.token);
     }
 
-    url
+    percent_encode(url.as_bytes(), DEFAULT_ENCODE_SET).to_string()
 }
 
 /// Retrieve a new API token
@@ -117,7 +120,7 @@ pub fn session_new(base_url: Option<&str>) -> Result<ApiSessionNew, reqwest::Err
 /// footnote: The API returns a blank page when querying an empty or wrong API key.
 pub fn session_reset(token: &str, base_url: Option<&str>) -> Result<ApiSessionReset, reqwest::Error> {
     let mut url: String = base_url.unwrap_or("https://opentdb.com").to_string() + "/api_token.php?command=reset&token=";
-    url.push_str(token);
+    url.push_str(percent_encode(token.as_bytes(), DEFAULT_ENCODE_SET).to_string().as_str());
 
     let rq: ApiSessionReset = reqwest::Client::new()
         .get(url.as_str())
