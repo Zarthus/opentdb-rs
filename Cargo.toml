@@ -1,6 +1,6 @@
 [package]
 name = "opentdb"
-description = "An implementation of the Open Trivia Database API in Rust https://opentdb.com.\n"
+description = "An implementation of the Open Trivia Database API in Rust https://opentdb.com."
 repository = "https://github.com/zarthus/opentdb-rs"
 version = "1.0.0"
 authors = ["Jos Ahrens <contact@liefland.net>"]
