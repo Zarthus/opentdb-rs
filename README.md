@@ -17,6 +17,8 @@ cargo add opentdb
 
 ### Usage
 
+From [examples/01_base_usage.rs](examples/01_base_usage.rs):
+
 ```rust
 extern crate opentdb;
 
@@ -29,7 +31,7 @@ use opentdb::enums::question_type::QuestionType;
 use opentdb::enums::encoding::Encoding;
 
 fn main() {
-    // Start a new session so that the service remains the questions we've received already.
+    // Start a new session so that the service remembers the questions we've received already.
     let token: String = opentdb::session_new()
         .expect("New Session Creation failed")
         .token;
