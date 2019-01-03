@@ -7,7 +7,7 @@
 [![dependency status](https://deps.rs/repo/github/zarthus/opentdb-rs/status.svg)](https://deps.rs/repo/github/zarthus/opentdb-rs)
 [![codecov](https://codecov.io/gh/zarthus/opentdb-rs/branch/master/graph/badge.svg)](https://codecov.io/gh/zarthus/opentdb-rs/branch/master/)
 
-An implementation of the Open Trivia Database API in Rust <https://opentdb.com>
+An implementation of the [Open Trivia Database](https://opentdb.com) API in Rust
 
 ### Install
 
@@ -26,9 +26,9 @@ For usage, review the [examples here](examples): [examples/01_base_usage.rs](exa
 
 ### License and Acknowledgements
 
-OpenTDB itself is licensed under the [MIT license](LICENSE)
+opentdb-rs itself is licensed under the [MIT license](LICENSE), opentdb-rs is not affiliated with the website or API it is using.
 
-OpenTDB depends on `serde` (for (de)serialization) and `reqwest` (for sending HTTP requests).
+opentdb-rs depends on `serde` (for (de)serialization) and `reqwest` (for sending HTTP requests). It also uses a dev-dependency `mockito` for integration tests.
 
 The Open Trivia Database is a collection of user-contributed trivia questions. This project would not be
 possible without it.
