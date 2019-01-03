@@ -1,6 +1,7 @@
+#[cfg(test)]
+
 extern crate opentdb;
 extern crate reqwest;
-#[cfg(test)]
 extern crate mockito;
 
 use opentdb::api_request::{ApiRequest};

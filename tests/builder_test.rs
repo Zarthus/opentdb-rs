@@ -1,3 +1,5 @@
+#[cfg(test)]
+
 extern crate opentdb;
 
 /// This is a built-in limitation by the remote API.

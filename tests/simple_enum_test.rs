@@ -1,3 +1,5 @@
+#[cfg(test)]
+
 extern crate opentdb;
 
 use opentdb::enums::category::Category;
