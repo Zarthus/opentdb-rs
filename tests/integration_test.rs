@@ -10,6 +10,7 @@ use opentdb::enums::category::Category;
 use opentdb::enums::difficulty::Difficulty;
 use opentdb::enums::question_type::QuestionType;
 use opentdb::enums::encoding::Encoding;
+use opentdb::enums::response_code::ResponseCode;
 
 use mockito::{mock, Matcher};
 
@@ -55,7 +56,7 @@ fn integration_end_to_end_test() {
     let rs: ApiResponse = opentdb::send_and_parse(rq)
         .expect("Sending HTTP request and Parsing it failed");
 
-    assert_eq!(opentdb::enums::response_code::ResponseCode::Success as u8, rs.response_code);
+    assert_eq!(ResponseCode::Success, rs.response_code);
     assert_eq!(3, rs.results.len());
 
     for results in rs.results {
@@ -83,7 +84,7 @@ fn integration_fail_response_code_1_test() {
     let rs: ApiResponse = opentdb::send_and_parse(rq).unwrap();
 
     _mock_api_response_fail1.assert();
-    assert_eq!(1, rs.response_code as u8);
+    assert_eq!(ResponseCode::NoResults, rs.response_code);
 }
 
 #[test]
@@ -94,7 +95,7 @@ fn integration_fail_response_code_2_test() {
     let rs: ApiResponse = opentdb::send_and_parse(rq).unwrap();
 
     _mock_api_response_fail2.assert();
-    assert_eq!(2, rs.response_code as u8);
+    assert_eq!(ResponseCode::InvalidParameter, rs.response_code);
 }
 
 #[test]
@@ -105,7 +106,7 @@ fn integration_fail_response_code_3_test() {
     let rs: ApiResponse = opentdb::send_and_parse(rq).unwrap();
 
     _mock_api_response_fail3.assert();
-    assert_eq!(3, rs.response_code as u8);
+    assert_eq!(ResponseCode::TokenNotFound, rs.response_code);
 }
 
 #[test]
@@ -116,5 +117,5 @@ fn integration_fail_response_code_4_test() {
     let rs: ApiResponse = opentdb::send_and_parse(rq).unwrap();
 
     _mock_api_response_fail4.assert();
-    assert_eq!(4, rs.response_code as u8);
+    assert_eq!(ResponseCode::TokenEmpty, rs.response_code);
 }

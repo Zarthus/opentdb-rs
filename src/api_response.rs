@@ -1,5 +1,7 @@
 /// An API response from `/api.php`.
 
+use crate::enums::response_code::ResponseCode;
+
 /// A struct representing the response from the server for the main API.
 ///
 /// Example Response
@@ -16,7 +18,7 @@
 /// ```
 #[derive(Deserialize, Debug)]
 pub struct ApiResponse {
-    pub response_code: u8,
+    pub response_code: ResponseCode,
     pub results: Vec<ApiResult>
 }
 
@@ -61,7 +63,7 @@ pub struct ApiResult {
 /// ```
 #[derive(Deserialize, Debug)]
 pub struct ApiSessionNew {
-    pub response_code: u8,
+    pub response_code: ResponseCode,
     pub response_message: String,
     pub token: String
 }
@@ -77,6 +79,6 @@ pub struct ApiSessionNew {
 /// ```
 #[derive(Deserialize, Debug)]
 pub struct ApiSessionReset {
-    pub response_code: u8,
+    pub response_code: ResponseCode,
     pub token: String
 }
