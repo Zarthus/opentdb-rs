@@ -7,7 +7,13 @@
 [![dependency status](https://deps.rs/repo/github/zarthus/opentdb-rs/status.svg)](https://deps.rs/repo/github/zarthus/opentdb-rs)
 [![codecov](https://codecov.io/gh/zarthus/opentdb-rs/branch/master/graph/badge.svg)](https://codecov.io/gh/zarthus/opentdb-rs/branch/master/)
 
-An implementation of the [Open Trivia Database](https://opentdb.com) API in Rust
+An implementation of the [Open Trivia Database](https://opentdb.com) API in Rust.
+
+The library is built with forward-compatibility in mind, you can handle your own custom things,
+provide your own custom base url, and handle custom error codes or elements that MAY be implemented
+in the future that aren't mapped to the library.
+
+## Library
 
 ### Install
 
@@ -24,7 +30,7 @@ For usage, review the [examples here](examples): [examples/01_base_usage.rs](exa
 - Only 1 Category can be requested per API Call. To get questions from any category, don't specify a category.
 - A Maximum of 50 Questions can be retrieved per call.
 
-### License and Acknowledgements
+## License and Acknowledgements
 
 opentdb-rs itself is licensed under the [MIT license](LICENSE), opentdb-rs is not affiliated with the website or API it is using.
 
