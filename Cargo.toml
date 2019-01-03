@@ -5,7 +5,7 @@ repository = "https://github.com/zarthus/opentdb-rs"
 version = "1.0.0"
 authors = ["Jos Ahrens <contact@liefland.net>"]
 edition = "2018"
-license-file = "LICENSE"
+license = "MIT"
 keywords = ["trivia", "otdb", "open-trivia"]
 categories = ["api-bindings", "games"]
 
